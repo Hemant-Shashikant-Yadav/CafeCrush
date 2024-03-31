@@ -21,7 +21,7 @@ app.set('view engine', 'ejs');
 app.use('/', require('../server/routes/main'));
 
 
-app.use(express.static(path.join(__dirname, '..', 'views')));
+app.use(express.static(path.join(__dirname, '..', 'public')));
 
 module.exports = (req, res) => {
     app(req, res);

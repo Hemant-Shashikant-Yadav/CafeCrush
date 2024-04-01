@@ -23,7 +23,7 @@ router.get('/test-db-connection', async (req, res) => {
     try {
         const client = await connectToMongoDB();
         // Perform a simple query to test the connection
-        const db = client.db('yourDatabaseName'); // Replace 'yourDatabaseName' with your actual database name
+        const db = client.db('cafe'); // Replace 'yourDatabaseName' with your actual database name
         const collections = await db.listCollections().toArray();
         res.json({ message: 'Connected to MongoDB', collections });
     } catch (error) {

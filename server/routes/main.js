@@ -26,7 +26,7 @@ app.get('/test-db-connection', async (req, res) => {
     } catch (error) {
         res.status(500).json({ message: 'Failed to connect to MongoDB', error: error.message });
     }
-});
+}); 
 
 
 module.exports = router;

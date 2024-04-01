@@ -1,4 +1,5 @@
 const express = require('express');
+const connectDB = require('../config/db');
 
 const router = express.Router();
 
@@ -24,7 +25,7 @@ router.get('/about', (req, res) => {
 router.get('/test-db-connection', async (req, res) => {
     try {
         console.log(1);
-        const client = await connectToMongoDB();
+        const client = await connectDB();
         console.log(2);
         // Perform a simple query to test the connection
         const db = client.db('CafeCrush'); // Replace 'yourDatabaseName' with your actual database name

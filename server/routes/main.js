@@ -1,7 +1,6 @@
 const express = require('express');
-const connectToMongoDB = require('../config/db1');
-
 const router = express.Router();
+const connectToMongoDB = require('../config/db1');
 
 
 router.get('/', (req, res) => {
@@ -23,20 +22,13 @@ router.get('/about', (req, res) => {
 
 
 router.get('/test-db-connection', async (req, res) => {
-    console.log(1);
     try {
-        console.log(1);
         const client = await connectToMongoDB();
-        console.log(2);
-        // Perform a simple query to test the connection
-        const db = client.db('CafeCrush'); // Replace 'yourDatabaseName' with your actual database name
-        console.log(3);
+        const db = client.db('CafeCrush'); // Replace 'CafeCrush' with your actual database name
         const collections = await db.listCollections().toArray();
-        console.log(4);
         res.json({ message: 'Connected to MongoDB', collections });
-        console.log(5);
     } catch (error) {
-        res.status(500).json({ message: 'aaaaa Failed to connect to MongoDB', error: error.message });
+        res.status(500).json({ message: 'Failed to connect to MongoDB', error: error.message });
     }
 });
 

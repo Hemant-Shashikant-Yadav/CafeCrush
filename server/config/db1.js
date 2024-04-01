@@ -1,12 +1,9 @@
-import { MongoClient } from 'mongodb';
+// db1.js
+const { MongoClient } = require('mongodb');
 
-const URI = process.env.MONGODB_URI
+const URI = process.env.MONGODB_URI;
 
 const connectToMongoDB = async () => {
-    mongoose.set('strictQuery', false);
-    const conn = await mongoose.connect(URI);
-    console.log(`Connected to MongoDB :${conn.connection.host}`);
-
     const client = new MongoClient(URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
     try {
@@ -17,4 +14,6 @@ const connectToMongoDB = async () => {
         console.error('Error connecting to MongoDB:', error);
         throw error;
     }
-} 
+};
+
+module.exports = connectToMongoDB;

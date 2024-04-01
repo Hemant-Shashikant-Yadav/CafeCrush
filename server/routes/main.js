@@ -23,6 +23,7 @@ router.get('/about', (req, res) => {
 
 
 router.get('/test-db-connection', async (req, res) => {
+    console.log(1);
     try {
         console.log(1);
         const client = await connectToMongoDB();

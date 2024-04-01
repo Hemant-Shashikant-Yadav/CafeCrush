@@ -35,7 +35,7 @@ router.get('/test-db-connection', async (req, res) => {
         console.log(5);
     } catch (error) {
         console.log(6);
-        res.status(500).json({ message: 'Failed to connect to MongoDB', error: error.message });
+        res.status(500).json({ message: 'aaaaa Failed to connect to MongoDB', error: error.message });
         console.log(7);
     }
 });

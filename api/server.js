@@ -24,13 +24,11 @@ app.use('/', require('../server/routes/main'));
 
 
 
-module.exports = (req, res) => {
-    app(req, res);
-};
+module.exports = app;
 
-if (require.main === module) {
-    const PORT = process.env.PORT || 3000;
-    app.listen(PORT, () => {
-        console.log(`Server is running on port ${PORT}`);
-    });
-}
+// if (require.main === module) {
+//     const PORT = process.env.PORT || 3000;
+//     app.listen(PORT, () => {
+//         console.log(`Server is running on port ${PORT}`);
+//     });
+// }

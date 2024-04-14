@@ -169,6 +169,7 @@
     .smallsearch{
         margin: 0px;
     }
+   
 }
 
 /*Sidenav*/
@@ -203,12 +204,23 @@
     margin-left: 50px;
     color: #fff;        
 }
-
+.logo-img{
+    width: 121px;
+}
 @media screen and (max-height: 450px) {
   .sidenav a {font-size: 18px;}
+
+}
+@media (max-width: 450px) {
+    .logo-img{
+        width: 60px;
+    }
 }
 
 .sidenav-heading{
     font-size: 36px;
     color: #fff;
+}
+.logo-title{
+    display: flex;
 }

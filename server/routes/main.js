@@ -7,7 +7,7 @@ router.get('/', (req, res) => {
 
     const locals =
     {
-        title: 'Home Page',
+        title: 'Cafe Crush',
         desciption: 'Welcome to the Home Page '
     }
     res.render('index', { locals });

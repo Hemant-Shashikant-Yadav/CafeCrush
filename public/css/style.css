@@ -215,6 +215,9 @@
     .logo-img{
         width: 60px;
     }
+    .cart a{
+        margin: 10px 0;
+    }
 }
 
 .sidenav-heading{

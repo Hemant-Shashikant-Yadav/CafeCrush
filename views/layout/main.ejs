@@ -9,10 +9,13 @@
     </title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-<link rel="shortcut icon" href="/img/logo1-removebg-preview.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/img/logo1-removebg-preview.png" type="image/x-icon">
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <base href="/">
+
 
     <!-- Corrected CSS and JS paths -->
     <link type="text/css" rel="stylesheet" href="/css/style.css">
@@ -21,12 +24,13 @@
 </head>
 
 <body>
+    
     <%- include('../partials/header.ejs') %>
-    <h1>main layout in ejs</h1>
-    <main class="main">
-        <%- body %>
-    </main>
-    <%- include('../partials/footer.ejs') %>
+        <h1>main layout in ejs</h1>
+        <main class="main">
+            <%- body %>
+        </main>
+        <%- include('../partials/footer.ejs') %>
 </body>
 
 </html>

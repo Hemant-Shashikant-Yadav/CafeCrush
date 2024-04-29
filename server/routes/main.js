@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const connectToMongoDB = require('../config/db1');
+const connectDB = require('../config/db');
+const User = require('../models/Post');
 
 
 router.get('/', (req, res) => {
@@ -16,15 +18,28 @@ router.get('/about', (req, res) => {
     res.render('about');
 });
 
-// router.get('', (req, res) => {
-//     res.send('Hello World!');
-// });
+router.post('/submit', async (req, res) => {
+    const { rollno, name, contact } = req.body;
+    try {
+        await connectDB(); // Connect to MongoDB
+        const newUser = new User({ rollno, name, contactNumber: contact });
+        const savedUser = await newUser.save();
+        console.log('User saved:', savedUser);
+        // res.send('User saved successfully!');
+        res.render('index');
+
+    } catch (error) {
+        console.error('Error saving user:', error);
+        res.status(500).send('Error saving user!');
+    }
+
+});
 
 
 router.get('/test-db-connection', async (req, res) => {
     try {
         const client = await connectToMongoDB();
-        const db = client.db('CafeCrush'); // Replace 'CafeCrush' with your actual database name
+        const db = client.db('CafeCrushDB'); // Replace 'CafeCrush' with your actual database name
         const collections = await db.listCollections().toArray();
         res.json({ message: 'Connected to MongoDB', collections });
     } catch (error) {
